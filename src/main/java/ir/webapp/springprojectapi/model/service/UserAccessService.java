@@ -2,7 +2,9 @@ package ir.webapp.springprojectapi.model.service;
 
 import ir.webapp.springprojectapi.model.entity.UserAccess;
 import ir.webapp.springprojectapi.model.repository.UserDA;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,4 +56,5 @@ public class UserAccessService {
             }
             return null;
     }
+
 }
