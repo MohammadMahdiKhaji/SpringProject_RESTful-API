@@ -1,4 +1,4 @@
-package ir.webapp.springprojectapi.model.common;
+package ir.webapp.springprojectapi.model.common.beans;
 
 import ir.webapp.springprojectapi.model.repository.UserDA;
 import ir.webapp.springprojectapi.model.service.UserAccessService;
