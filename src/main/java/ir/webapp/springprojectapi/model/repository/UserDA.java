@@ -15,6 +15,9 @@ public interface UserDA extends JpaRepository<UserAccess, Long> {
     @Query("SELECT oo FROM UserAccessEntity oo WHERE oo.username = :username AND oo.password = :password")
     Optional<UserAccess> findByUsernameAndPassword(String username, String password);
 
+    @Query("SELECT oo FROM UserAccessEntity oo WHERE oo.username = :username")
+    UserAccess findByUsername(String username);
+
     @Query("SELECT oo FROM UserAccessEntity oo WHERE oo.password = :password")
     Optional<UserAccess> findByPassword(String password);
 }

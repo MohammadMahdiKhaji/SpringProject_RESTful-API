@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@ToString
 @Entity(name = "LogEntity")
 @Table(name = "LogTable")
 public class Log {
@@ -41,18 +41,5 @@ public class Log {
         this.data = data;
         this.clientIp = clientIp;
         this.actionDateTime = Timestamp.valueOf(LocalDateTime.now());
-    }
-
-    @Override
-    public String toString() {
-        return "Log{" +
-                "id=" + id +
-                ", dbTable=" + dbTable +
-                ", userId=" + userId +
-                ", action=" + action +
-                ", data='" + data + '\'' +
-                ", clientIp='" + clientIp + '\'' +
-                ", actionDateTime=" + actionDateTime +
-                '}';
     }
 }

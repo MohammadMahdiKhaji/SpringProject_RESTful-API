@@ -1,6 +1,7 @@
 package ir.webapp.springprojectapi.controller.app;
 
 import ir.webapp.springprojectapi.model.entity.UserAccess;
+import ir.webapp.springprojectapi.model.entity.enumeration.Classification;
 import ir.webapp.springprojectapi.model.service.UserAccessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +17,9 @@ public class UserAccessController {
     }
 
     public UserAccess save(UserAccess userAccess) {
-        if (userAccess.getUsername() != null && userAccess.getPassword() != null)
-        return userAccessService.save(userAccess);
+        if (userAccess.getUsername() != null && userAccess.getPassword() != null) {
+            return userAccessService.save(userAccess);
+        }
         return null;
     }
 

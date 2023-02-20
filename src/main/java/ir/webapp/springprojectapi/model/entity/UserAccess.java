@@ -1,16 +1,19 @@
 package ir.webapp.springprojectapi.model.entity;
 
 import ir.webapp.springprojectapi.model.entity.base.BaseEntity;
+import ir.webapp.springprojectapi.model.entity.enumeration.Classification;
 import lombok.*;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-
+//@AllArgsConstructor
+@ToString
 @Entity(name = "UserAccessEntity")
 @Table(name = "UserAccessTable")
 public class UserAccess extends BaseEntity {
@@ -22,6 +25,9 @@ public class UserAccess extends BaseEntity {
     //Trim
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Classification classification;
+
     public UserAccess(String username, String password) {
         this.username = username.toLowerCase().trim();
         this.password = password.trim();
@@ -31,13 +37,5 @@ public class UserAccess extends BaseEntity {
         this.setId(id);
         this.username = username;
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "UserAccess{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }
